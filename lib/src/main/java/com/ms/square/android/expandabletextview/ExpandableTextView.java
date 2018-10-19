@@ -124,9 +124,9 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if (mToggleView.getVisibility() != View.VISIBLE) {
-            return;
-        }
+//        if (mToggleView.getVisibility() != View.VISIBLE) {
+//            return;
+//        }
 
         mCollapsed = !mCollapsed;
         mExpandIndicatorController.changeState(mCollapsed);
@@ -235,6 +235,10 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     public void setOnExpandStateChangeListener(@Nullable OnExpandStateChangeListener listener) {
         mListener = listener;
+    }
+
+    public TextView getTextView() {
+        return mTv;
     }
 
     public void setText(@Nullable CharSequence text) {
